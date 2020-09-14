@@ -1,26 +1,42 @@
-# Shell prompt
-#PS1="%1~ %# "
-
+fpath+=~/.zfunc
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/ksadasivam/.oh-my-zsh"
+export ZSH="/home/krishna/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="awesomepanda"
+
+# https://medium.com/@alex285/get-powerlevel9k-the-most-cool-linux-shell-ever-1c38516b0caa
+# https://www.youtube.com/watch?v=wM1uNqj71Ko
+POWERLEVEL9K_MODE="nerdfont-complete"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+# Prompt customization: https://github.com/Powerlevel9k/powerlevel9k#prompt-customization
+POWERLEVEL9K_DISABLE_RPROMPT=true
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="▶ "
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_fedora_icon context dir vcs)
+# Glyph icons: 
+# - https://github.com/ryanoasis/nerd-fonts#glyph-sets 
+# - (Use vim to paste the glyph)
+POWERLEVEL9K_CUSTOM_FEDORA_ICON="echo "
+POWERLEVEL9K_CUSTOM_FEDORA_ICON_BACKGROUND=069
+POWERLEVEL9K_CUSTOM_FEDORA_ICON_FOREGROUND=015
+# dir
+POWERLEVEL9K_SHORTEN_DELIMITER=".."
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "avit")
-
-# Fix for Insecure completion-dependent directories detected
-ZSH_DISABLE_COMPFIX=true
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -39,7 +55,7 @@ ZSH_DISABLE_COMPFIX=true
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -70,14 +86,11 @@ ZSH_DISABLE_COMPFIX=true
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-	git
-	poetry
-)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,6 +111,10 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+
+export PATH=$PATH:$HOME/.poetry/bin
+
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -106,37 +123,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-#git command alias
+alias vs=/usr/bin/code
 alias gs='git status'
 alias gp='git push'
 alias gc='git commit'
 alias gco="git checkout"
 alias gl="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
 alias poetry="python3 $HOME/.poetry/bin/poetry"
-
-
-
-# Utility shortcut alias
-alias s='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-
-export GOROOT=$HOME/go
-export GOPATH=/usr/local/go
-
-export PATH=$PATH:/usr/local
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin
-export PATH=$PATH:$HOME/.poetry/bin
-
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# export npm pkg token
-export NPM_PACKAGES_READ_TOKEN=53aa38a217967eec1aee357084b79f2b48aec86b
-
-
-
-
-
