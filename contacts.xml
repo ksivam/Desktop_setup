@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contacts>
+    <contact>
+        <createdAt>2019-08-19T20:30:00Z</createdAt>
+        <emails>
+            <contact>john.doe@mail.com</contact>
+        </emails>
+        <firstName>John</firstName>
+        <id>1</id>
+        <lastName>Doe</lastName>
+    </contact>
+    <contact>
+        <createdAt>2019-08-19T20:45:00Z</createdAt>
+        <emails>
+            <contact>jane.poe@mail.com</contact>
+            <contact>janep@mail.com</contact>
+        </emails>
+        <firstName>Jane</firstName>
+        <id>2</id>
+        <lastName>Poe</lastName>
+    </contact>
+</contacts>
+
