@@ -3,7 +3,7 @@
     <contact>
         <createdAt>2019-08-19T20:30:00Z</createdAt>
         <emails>
-            <contact>john.doe@mail.com</contact>
+            <email>john.doe@mail.com</email>
         </emails>
         <firstName>John</firstName>
         <id>1</id>
@@ -12,8 +12,8 @@
     <contact>
         <createdAt>2019-08-19T20:45:00Z</createdAt>
         <emails>
-            <contact>jane.poe@mail.com</contact>
-            <contact>janep@mail.com</contact>
+            <email>jane.poe@mail.com</email>
+            <email>janep@mail.com</email>
         </emails>
         <firstName>Jane</firstName>
         <id>2</id>
