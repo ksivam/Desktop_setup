@@ -1,36 +1,14 @@
-fpath+=~/.zfunc
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/krishna/.oh-my-zsh"
+export ZSH="/Users/aarthi/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-
-# https://medium.com/@alex285/get-powerlevel9k-the-most-cool-linux-shell-ever-1c38516b0caa
-# https://www.youtube.com/watch?v=wM1uNqj71Ko
-POWERLEVEL9K_MODE="nerdfont-complete"
-ZSH_THEME="powerlevel9k/powerlevel9k"
-
-# Prompt customization: https://github.com/Powerlevel9k/powerlevel9k#prompt-customization
-POWERLEVEL9K_DISABLE_RPROMPT=true
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="▶ "
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_fedora_icon context dir vcs)
-# Glyph icons: 
-# - https://github.com/ryanoasis/nerd-fonts#glyph-sets 
-# - (Use vim to paste the glyph)
-POWERLEVEL9K_CUSTOM_FEDORA_ICON="echo "
-POWERLEVEL9K_CUSTOM_FEDORA_ICON_BACKGROUND=069
-POWERLEVEL9K_CUSTOM_FEDORA_ICON_FOREGROUND=015
-# dir
-POWERLEVEL9K_SHORTEN_DELIMITER=".."
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
-
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -67,6 +45,8 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -111,10 +91,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-
-export PATH=$PATH:$HOME/.poetry/bin
-
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -123,10 +99,18 @@ export PATH=$PATH:$HOME/.poetry/bin
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vs=/usr/bin/code
+
+alias python='python3'
+alias vs=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code
 alias gs='git status'
 alias gp='git push'
 alias gc='git commit'
 alias gco="git checkout"
 alias gl="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
-alias poetry="python3 $HOME/.poetry/bin/poetry"
+export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/aarthi/ws/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/aarthi/ws/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/aarthi/ws/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/aarthi/ws/google-cloud-sdk/completion.zsh.inc'; fi
